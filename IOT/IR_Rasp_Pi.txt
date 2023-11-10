@@ -1,0 +1,16 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(40,GPIO.OUT)
+GPIO.setup(3,GPIO.IN)
+
+
+int IRval=GPIO.input(3)
+Try:
+While True:
+if(IRval==0)
+GPIO.output(40,GPIO.HIGH)
+time.sleep(1)
+else
+GPIO.output(40,GPIO.LOW)
+time.sleep(1)

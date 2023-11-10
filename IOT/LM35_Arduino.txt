@@ -1,0 +1,23 @@
+void setup()
+ {
+  pinMode(8, OUTPUT);//led or buzzer bigger leg led or buzzer data pin
+  pinMode(A0, INPUT);//LM35
+  Serial.begin(9600);//baud rate
+}
+
+
+void loop()
+{
+  int temp_val_ana = analogRead(A0);// analogRead()
+  float  temp_val = (temp_val_ana * 4.88); /* Convert adc value to equivalent voltage */
+  temp_val = (temp_val/10);
+  thresh=45;
+   if (thresh>=temp_val)
+   { // LOW MEANS Object Detected
+    digitalWrite(8, HIGH);
+   }
+  else
+  {
+    digitalWrite(8, LOW);
+  }
+}

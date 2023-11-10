@@ -1,0 +1,24 @@
+void setup()
+ {
+  pinMode(8, OUTPUT);//led or buzzer bigger leg led or buzzer data pin
+  pinMode(7, INPUT);//IR connection
+  Serial.begin(9600);//baud rate
+}
+
+
+void loop()
+{
+  int SensorValue = digitalRead(7);// analogRead()
+ 
+  Serial.print("SensorPin Value: ");
+  Serial.println(SensorValue);
+  delay(1000);
+   if (SensorValue==LOW)
+   { // LOW MEANS Object Detected
+    digitalWrite(8, HIGH);
+  }
+  else
+  {
+    digitalWrite(8, LOW);
+  }
+}
