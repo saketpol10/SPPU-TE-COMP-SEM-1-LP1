@@ -1,1 +1,1 @@
-Comtains all the codes of SPOS and IOT
+Contains all the codes of SPOS and IOT
